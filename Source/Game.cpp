@@ -4,7 +4,7 @@
 
 CGame::CGame()
 {
-	estado == 0;///ACT2: Mal, no debes de hacer una comparacion. Debes asigar el estado iniciar a tu juego.
+	estado = ESTADO_INICIANDO;///ACT2: Mal, no debes de hacer una comparacion. Debes asigar el estado iniciar a tu juego.
 }
 
 // Con esta función eliminaremos todos los elementos en pantalla
