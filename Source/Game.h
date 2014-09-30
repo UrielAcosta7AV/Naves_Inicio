@@ -27,5 +27,4 @@ public:
 		SDL_Surface * nave;
 		Estado estado;
 
-
 };

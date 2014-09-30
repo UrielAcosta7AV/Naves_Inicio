@@ -9,9 +9,7 @@ CGame::CGame()
 	estado = ESTADO_INICIANDO;//Corregido Maestro//
 	atexit(SDL_Quit);
 	
-	
-	
-
+	///ACT3: Mal, el codigo de abajo debe estar en el metodo iniciando, revisa el documento de la actividad3.
 	if (SDL_Init(SDL_INIT_VIDEO)){
 		printf("Error %s ", SDL_GetError());
 		exit(EXIT_FAILURE);	
@@ -24,9 +22,9 @@ CGame::CGame()
 		printf("Error %s ", SDL_GetError());
 		exit(EXIT_FAILURE); 
 	}
-	    SDL_Flip(screen);
-	    SDL_WM_SetCaption("Mi primer Juego", NULL);
-	
+
+	SDL_Flip(screen);
+	SDL_WM_SetCaption("Mi primer Juego", NULL);
 }
 
 
