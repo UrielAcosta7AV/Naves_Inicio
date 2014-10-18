@@ -1,5 +1,6 @@
-# include <SDL.h>
+#include <SDL.h>
 #include <SDL_image.h>
+#include "Sprite.h"
 
 class CGame
 {
@@ -14,18 +15,19 @@ public:
 
 	enum Estado
 	{
-		ESTADO_INICIANDO, 
-		ESTADO_MENU, 
-		ESTADO_JUGANDO, 
-		ESTADO_TERMINANDO, 
-		ESTADO_FINALIZADO, 
+		ESTADO_INICIANDO,
+		ESTADO_MENU,
+		ESTADO_JUGANDO,
+		ESTADO_TERMINANDO,
+		ESTADO_FINALIZADO,
 	};
 
-		private:
-		void Iniciando();
-		SDL_Surface * screen;
-		SDL_Surface * nave;
-		Estado estado;
+private:
+	void Iniciando();
+	SDL_Surface *screen;
+	Sprite * nave;
+	Estado estado;
 
 
 };
+
