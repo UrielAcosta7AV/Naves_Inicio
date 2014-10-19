@@ -1,8 +1,7 @@
 #include "SpriteDef.h"
 
-
-
-SpriteDef::SpriteDef(){
+SpriteDef::SpriteDef()//contructor//
+{
 	modulos[0].id = 0;
 	modulos[0].x = 0;
 	modulos[0].y = 0;

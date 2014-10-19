@@ -1,7 +1,7 @@
 #include "Game.h"
 #include  <stdlib.h>
 
-// La función principal del juego
+
 int main(int argc, char *argv[]){
 	CGame *navesGame = new CGame();//Cra un objeto usando apuntadores//
 

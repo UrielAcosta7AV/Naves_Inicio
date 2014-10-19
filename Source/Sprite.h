@@ -2,22 +2,19 @@
 #define __SPRITE_H__
 #include<SDL.h>
 #include "SpriteDef.h"
-
-class Sprite{
-SDL_Surface * image;//Imagen//
-SDL_Surface * screen;//Pantalla//
-SpriteDef spriteDef;
+class Sprite
+{
+	SDL_Surface * image;
+	SDL_Surface *screen;
+	SpriteDef spriteDef;
 public:
-void CargarImagen(char * path);
-void PintarModulo(int nombre, int x, int y);
-Sprite(SDL_Surface * screen);//Constructor//
-~Sprite();//Destructor//
-
-
-
+	void CargarImagen(char * ruta);
+	//void PintarModulo(int id, int x, int y, int w, int h);
+	void PintarModulo(int id, int x, int y);
+	Sprite(SDL_Surface * screen);
+	~Sprite();
+	int WidthModule(int id);
+	int HeightModule(int id);
 
 };
-
-
-
 #endif

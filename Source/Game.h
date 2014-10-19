@@ -1,7 +1,6 @@
 #include <SDL.h>
 #include <SDL_image.h>
-#include "Sprite.h"
-
+#include "Nave.h"
 
 class CGame
 {
@@ -24,12 +23,12 @@ public:
 
 private:
 	void Iniciando();
-	Uint8 *keys;// variable sirve para ver si determinadas teclas.......
+	Uint8 *keys;//variable sirve para ver si determinadas teclas//
 	SDL_Event event;
 
 
-	SDL_Surface * screen;
-	Sprite * nave;
+	SDL_Surface *screen;
+	Nave * nave;
 	Estado estado;
 
 };
