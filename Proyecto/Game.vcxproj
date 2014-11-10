@@ -38,7 +38,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)..\Ejecutable</OutDir>
+    <OutDir>$(SolutionDir)..\Ejecutable\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -81,7 +81,7 @@
     <ClInclude Include="..\Source\SpriteDef.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Ejecutable\Readme.txt" />
+    <None Include="..\Ejecutable\Readme.txt.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

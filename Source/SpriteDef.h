@@ -1,20 +1,21 @@
 #ifndef __SPRITEDEF_H__
 #define __SPRITEDEF_H__
 
-class SpriteDef{
+class SpriteDef
+{
 	struct Modulo
 	{
-		int id;
-		int x;
-		int y;
-		int w;
-		int h;
+		    int id;
+			int x;
+			int y;
+			int w;
+			int h;
 	};
-public:
-		Modulo modulos[1];// Tipo Nombre [espacio de la estructura]//
-	SpriteDef();//constructor//
+     public:
+  //   tipo, nombre, espacio[1];//
+	    Modulo modulos [1];
+	    SpriteDef();//Constructor//
+	
 };
 
-
 #endif
-
