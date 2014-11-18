@@ -27,13 +27,13 @@ void CGame::Iniciando(){
 		exit(EXIT_FAILURE);
 	}
 	SDL_Flip (screen);
-	SDL_WM_SetCaption( "N.A.V.I", NULL);
+	SDL_WM_SetCaption( "N.A.V.I 1.0", NULL);
 	atexit(SDL_Quit);
 	nave = new Nave(screen, "../Data/MiNave.bmp",(WIDTH_SCREEN / 2)/*-(w/2)*/,(HEIGHT_SCREEN-80)/*-(h)*/,0);
 	//enemigo = new Nave(screen,"../Data/enemigo.bmp",0,0);
-	menu = new Nave(screen, "../Data/Texto.bmp",0,0,1);
-	titulos= new Nave(screen,"../Data/espacio.bmp",0,0,1);
-	fondo=new Nave(screen, "../Data/Fondo.bmp",0,0,1);
+	menu = new Nave(screen, "../Data/Texto.bmp",0,120,1);//TEXTO INICIAR SALIR//TITULO//
+	titulos= new Nave(screen,"../Data/Fondo.bmp",0,0,1);//FONDO de menu
+	fondo=new Nave(screen, "../Data/espacio.bmp",0,0,1);//fondo del juego
 
 	enemigoArreglo = new Nave*[10];
 
@@ -74,13 +74,11 @@ bool CGame::Start()
 
 				break;
 			case Estado::ESTADO_MENU:
-				
-			//	menu->Pintar();
-			//	titulos->Pintar();
-				
-				SDL_Flip (screen); 
+			    titulos->Pintar();
+				menu->Pintar();
+								SDL_Flip (screen); 
 				keys = SDL_GetKeyState(NULL);
-				/*
+				
 				if(keys[SDLK_UP])
 				{
 				
@@ -90,12 +88,9 @@ bool CGame::Start()
 				if (keys[SDLK_DOWN])
 				{
 			
-			
 					estado=ESTADO_FINALIZADO;
 				}
-				*/
-				estado=ESTADO_JUGANDO;
-			
+				
 			break;
 			
 			case Estado::ESTADO_JUGANDO:	//JUGAR//
@@ -128,7 +123,7 @@ bool CGame::Start()
 			nave->MoverAbajo(8);
 			}
 
-			//fondo->Pintar();
+			fondo->Pintar();
 			nave->Pintar();
 	
 			for (int i=0;i<10;i++)
