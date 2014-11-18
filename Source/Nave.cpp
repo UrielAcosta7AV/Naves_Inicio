@@ -1,20 +1,24 @@
 #include "Nave.h"
 #include "Config.h"
+#include "Sprite.h"
 
-Nave:: Nave(SDL_Surface * screen, char *rutaImagen, int x, int y)//constructor//
-{
+Nave::Nave(SDL_Surface * screen, char * rutaImagen, int x, int y, int module){
+	moduleUsing=module;
+	//+5
+	sprite->borrarFondoNave();
+	//-5
+
 	sprite = new Sprite(screen);
 	sprite->CargarImagen(rutaImagen);
-	w = sprite->WidthModule(0); //variables para los modulos//
-	h = sprite->HeightModule(0);
+	w=sprite->WidthModule(moduleUsing);//variables para los modulos//
+	h=sprite->HeightModule(moduleUsing);
 
 	this->x=x;//Aqui se corto la direccion y se coloco en Game.cpp nave//
-    this->y=y;//
-	stepActual=0;
+	this->y=y;//
+	stepsActual=0;
 	posicionBrinco=0;
 	posicionActual=0;
 }
-
 Nave::~Nave()
 {
 	delete sprite;
@@ -22,7 +26,7 @@ Nave::~Nave()
 
 void Nave::Pintar()
 {
-	sprite->PintarModulo(0,x,y);
+	sprite->PintarModulo(moduleUsing,x,y);
 }
 
 void Nave::Mover(int posicion)
@@ -30,13 +34,27 @@ void Nave::Mover(int posicion)
 	x += posicion;
 }
 
+void Nave::MoverIzquierda(int posicion)
+{
+	x -= posicion;
+}
+
+void Nave::MoverArriba(int posicion)
+{
+	y -= posicion;
+}
+
+void Nave::MoverAbajo(int posicion)
+{
+	y += posicion;
+}
+
 int Nave::obtenerX()
 {
 	return x;
 }
 
-int Nave::obtenerY()
-{
+int Nave::obtenerY(){
 	return y;
 }
 
@@ -44,11 +62,10 @@ int Nave::obtenerW()
 {
 	return w;
 }
-int Nave::obtenerH()
-{
+
+int Nave::obtenerH(){
 	return h;
 }
-
 void Nave::ponerEn(int x, int y)
 {
 	this->x=x;
@@ -59,20 +76,20 @@ void Nave::Mover(int brinco, int puntoFinal)
 {
 	if(posicionBrinco<=0)
 	{
-	  posicionBrinco = brinco;
-	  posicionFinal = puntoFinal;
+		posicionBrinco=brinco;
+		posicionFinal=puntoFinal;
 	}
 }
 
 void Nave::Actualizar()
 {
-	if(posicionBrinco != 0)
+	if(posicionBrinco !=0)
 	{
-		if(posicionActual <= posicionFinal)
-		   {
-			   Mover(posicionBrinco);
-			   posicionActual++;
-		   }
+		if(posicionActual<=posicionFinal)
+		{
+		Mover(posicionBrinco);
+		posicionActual++;
+		}
 		else{
 				/*
 			    posicionBrinco=0;//
@@ -80,28 +97,25 @@ void Nave::Actualizar()
 				posicionFinal=0;//
 				IncrementarStep();//
 				*/
-				TerminarAnimacion();
-		   
-
-		   }
+			TerminarAnimacion();
+		}
 	}
 }
-
-void Nave::SetStep(int stepsFinal) //Aqui se habilitan los metodos//
+	
+void Nave::SetStep(int stepsFinal)//Aqui se habilitan los metodos//
 {
-	this->stepFinal = stepsFinal;
+	this->stepsFinal=stepsFinal;
 }
 void Nave::IncrementarStep()
 {
-	stepActual++;
-		if(stepActual >= stepFinal)
-			stepActual=0;
+	stepsActual++;
+		if(stepsActual>=stepsFinal)
+			stepsActual=0;
 }
-int  Nave::ObtenerStepActual()
+int Nave::ObtenerStepActual()
 {
-	return stepActual;
+	return stepsActual;
 }
-
 bool Nave::IsRunningAnimacion()
 {
 	if(posicionBrinco==0)
@@ -109,14 +123,9 @@ bool Nave::IsRunningAnimacion()
 	else
 		return true;
 }
-
 void Nave::TerminarAnimacion(){///Aqui terminamos animacion & pasamos al siguiente paso.....
-   	    posicionBrinco=0;
+		posicionBrinco=0;
+		posicionFinal=0;
 		posicionActual=0;
-	    posicionFinal=0;
 		IncrementarStep();
-
-
 }
-
-

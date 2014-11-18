@@ -1,10 +1,10 @@
+
 #include <SDL.h>
 #include <SDL_image.h>
 #include "Nave.h"
 
 
-
-class CGame
+class CGame 
 {
 public:
 	bool Start();
@@ -21,6 +21,7 @@ public:
 		};
 
 private:
+	
 	void Iniciando();
 	void MoverEnemigo();//Metodo para mover al enemigo//
 	bool esLimitePantalla(Nave *objeto, int bandera);//metodo para limitar la pantalla//
@@ -32,8 +33,16 @@ private:
 	Nave *nave;      // La nave Nave y enemigo son las naves//
 	//Nave *enemigo;//
 	Nave **enemigoArreglo;
+	Nave *menu;
+	Nave *titulos;
+	Nave *fondo;
+
 
 	Estado estado;
+	
+	float enemigoParabola;
+	unsigned int frames;
+	unsigned int tiempoFrameInicio;
+	unsigned int tiempoFrameFinal;
 
-	float ennemigoParabola;
 };
