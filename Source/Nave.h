@@ -1,41 +1,29 @@
-#ifndef _NAVE_H_  //para proteger 
-#define _NAVE_H_
-#include "Sprite.h"
+#ifndef __NAVE_H__
+#define __NAVE_H__
+#include "Objeto.h"
 
-
-class Nave
+class Nave 
 {
-	//Todas las variables
-	int x;
-	int y;
-	int w;
-	int h;
-	int posicionActual;//donde esta la nave
-	int posicionFinal;//asta donde llegara
-	int posicionBrinco;
-	int stepActual;
-	int stepFinal;
+	Objeto *nave;
+	Objeto **bala;
+	int balasVisibles;
 
-	Sprite *sprite;
 public:
-	Nave(SDL_Surface * screen, char *rutaImagen, int x, int y);
-	~Nave();
-	//Aqui se crean todos los metodos//
+	Nave(SDL_Surface * screen, char *rutaImagen, int x, int y, int module);
 	void Pintar();
-	void Mover(int posicion);
-	        //   cant      numero de veces//
-	void Mover(int brinco, int puntoFinal);
-	void SetStep(int stepsFinal);
-	void IncrementarStep();
-	int  ObtenerStepActual();
-	void Actualizar(); //Metodo de Actualizacion
-	bool IsRunningAnimacion();
-	void TerminarAnimacion();//fuerza a terminar la STRP actual de la nave//
-	int obtenerX();    //metodo para obtener el bvalor de x & y//
-	int obtenerY();
-	int obtenerW();
-	int obtenerH();
-	void ponerEn(int x, int y);
+	void Disparar(int tipo, int valor);
+	void AutoDisparar(int tipo, int valor);//metodo y nos vamos a nave.cpp
+	void Actualizar(int tipo, int valor);
+	void Nave::MoverDerecha(int valor);	
+	void Nave::MoverIzquierda(int valor);
+	void Nave::MoverArriba(int valor);
+	void Nave::MoverAbajo(int valor);
+	Objeto*GetNaveObjeto();
 };
+/*
+class Nave{
 
+
+};
+*/
 #endif
