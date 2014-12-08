@@ -3,23 +3,36 @@
 
 SpriteDef::SpriteDef()//constructor de la clase//
 {
+<<<<<<< HEAD
 	modulo[0].id = MODULO_MINAVE_NAVE;
+=======
+	modulo[0].id =0;
+>>>>>>> origin/master
 	modulo[0].x=0;
 	modulo[0].y=0;
 	modulo[0].w=64;
 	modulo[0].h=64;
+<<<<<<< HEAD
 
 	modulo[1].id=MODULO_MENU_FONDO;
+=======
+	modulo[1].id=1;
+>>>>>>> origin/master
 	modulo[1].x=0;
 	modulo[1].y=0;
 	modulo[1].w=WIDTH_SCREEN;
 	modulo[1].h=HEIGHT_SCREEN;
+<<<<<<< HEAD
 
 	modulo[2].id=MODULO_ENEMIGO_NAVE;
+=======
+	modulo[2].id=2;
+>>>>>>> origin/master
 	modulo[2].x=0;
 	modulo[2].y=0;
 	modulo[2].w=54;
 	modulo[2].h=61;
+<<<<<<< HEAD
 	///////////
 	modulo[3].id=MODULO_TEXTO_TITULO;
 	modulo[3].x=3;
@@ -72,5 +85,7 @@ SpriteDef::SpriteDef()//constructor de la clase//
 	modulo[10].h=56;
 
 
+=======
+>>>>>>> origin/master
 
 } //en metodos no lleva ;//

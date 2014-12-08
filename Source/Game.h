@@ -24,7 +24,11 @@ public:
 		};
 
 private:
+<<<<<<< HEAD
 	void InicializandoStage();
+=======
+	
+>>>>>>> origin/master
 	void Iniciando();
 	void MoverEnemigo();//Metodo para mover al enemigo//
 	bool esLimitePantalla(Objeto *objeto, int bandera);//metodo para limitar la pantalla//
@@ -41,6 +45,7 @@ private:
 	Nave *nave;      // La nave Nave y enemigo son las naves//
 	//Nave *enemigo;//
 	Nave **enemigoArreglo;
+<<<<<<< HEAD
 	Stage niveles[4];
 
 	Objeto *menu;
@@ -48,6 +53,11 @@ private:
 	Objeto *fondo;
 
 
+=======
+	Nave *menu;
+	Nave *titulos;
+	Nave *fondo;
+>>>>>>> origin/master
 
 
 	Estado estado;

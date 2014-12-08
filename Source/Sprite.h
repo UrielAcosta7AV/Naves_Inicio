@@ -12,7 +12,11 @@ class Sprite
 public:
 	void CargarImagen(char* ruta); // path = ruta del archivo//
 	//void PintarModulo(int id, int x, int y, int h);
+<<<<<<< HEAD
 	//void borrarFondoNave();
+=======
+	void borrarFondoNave();
+>>>>>>> origin/master
 	void PintarModulo (int id, int x, int y);
 	Sprite(SDL_Surface *screen);
 	~Sprite();

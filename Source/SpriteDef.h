@@ -11,7 +11,11 @@ class SpriteDef{
 	};
 public:
   //   tipo, nombre, espacio[1];//
+<<<<<<< HEAD
 	Modulo modulo[11];
+=======
+	Modulo modulo[3];
+>>>>>>> origin/master
 	SpriteDef();//Constructor
 };
 #endif

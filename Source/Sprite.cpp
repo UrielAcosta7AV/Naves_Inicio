@@ -9,12 +9,23 @@ void Sprite::CargarImagen(char*ruta){
 		
 }
 
+<<<<<<< HEAD
 
 
 Sprite::Sprite(SDL_Surface * screen){
 	this->screen =screen;
 }
 
+=======
+void Sprite::borrarFondoNave(){
+	
+}
+
+Sprite::Sprite(SDL_Surface * screen){
+	this->screen =screen;
+}
+
+>>>>>>> origin/master
 Sprite::~Sprite(){
 	SDL_FreeSurface(image);
 };
